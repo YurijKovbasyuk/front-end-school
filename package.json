@@ -2,6 +2,7 @@
   "name": "front-end-school",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yurijkovbasyuk.github.io/front-end-school/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
