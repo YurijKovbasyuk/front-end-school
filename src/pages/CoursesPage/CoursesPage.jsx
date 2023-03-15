@@ -9,6 +9,7 @@ import { getAllCoursesAPI } from 'API/API';
 
 const CoursesPage = () => {
     const [coursesList, setCoursesList] = useState([]);
+    // const [previewImage, setPreviewImage] = useState([]);
 
     useEffect(() => {
         getAllCoursesAPI()
@@ -20,13 +21,27 @@ const CoursesPage = () => {
             });
     }, []);
 
+    // useEffect(() => {
+    //     getPreviewImage()
+    //         .then(data => {
+    //             setPreviewImage(data);
+    //             console.log(data)
+    //         })
+    //         .catch(err => {
+    //             throw err;
+    //         });
+    // }, []);
+
+
 
     return (
         <>
 
             <h1>CoursesPage START</h1>
 
-            <CoursesList coursesList={coursesList} />
+            <CoursesList coursesList={coursesList}
+            // previewImage={previewImage}
+            />
 
         </>
     );

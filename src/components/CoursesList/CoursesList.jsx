@@ -4,22 +4,29 @@ import PropTypes from 'prop-types';
 export const CoursesList = ({ coursesList }) => {
   const location = useLocation();
 
+
+
   return (
     <ul>
       {coursesList.map(course => {
-        const { id, title, description
+        const { id, title, description, previewImageLink, lessonsCount, rating, meta
+
+
         } = course;
         return (
           <li key={id}>
             <Link
-              className="link"
               to={`/courses/${id}`}
               state={{ from: location }}
             >
-              <h2>{title}</h2>
+              <h2>Title: {title}</h2>
 
             </Link>
-            <p>{description}</p>
+            <img src={previewImageLink + '/cover.webp'} alt={description}></img>
+            <p>Description: {description}</p>
+            <p>Skills: {meta.skills}</p>
+            <p>LessonsCount: {lessonsCount}</p>
+            <p>rating: {rating}</p>
           </li>
         );
       })}
