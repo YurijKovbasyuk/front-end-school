@@ -18,6 +18,8 @@ axios.defaults.baseURL = baseURL;
 export const getAllCoursesAPI = () => {
   axios.defaults.headers = {
     Authorization: `${AUTH_TOKEN}`,
+    ContentType: 'application/json',
+    AccessControlAllowOrigin: '*',
     language: 'en-US',
     cors: {
       origin: '*',
@@ -30,6 +32,8 @@ export const getAllCoursesAPI = () => {
 export const getOneCourseByIdAPI = courseId => {
   axios.defaults.headers = {
     Authorization: `${AUTH_TOKEN}`,
+    ContentType: 'application/json',
+    AccessControlAllowOrigin: '*',
     language: 'en-US',
     cors: {
       origin: '*',
