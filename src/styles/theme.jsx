@@ -1,21 +1,17 @@
 export const theme = Object.freeze({
   colors: {
     textMain: '#111111',
-    textSecond: '#ffffff',
-    textThird: '#111321',
-    textLowOpacity: '#11111199',
-    textLink: '#3091EB',
-    black: '#000000',
-    accent: '#F59256',
-    hover: '#FF6101',
+    textSecond: '#202020',
+    textLink: '#120bbcc4',
+    hover: '#0700b4',
     placeholder: 'rgba(17, 17, 17, 0.6)',
 
-    bgMain: '#fdf7f2',
-    bgSecond: '#ffffff',
+    bgMain: '#cafcff',
+    bgSecond: '#fffcff',
 
     dark: '#181C27',
     btnTransperent: 'rgba(255, 255, 255, 0.6)',
-    shadow: 'rgba(49, 21, 4, 0.07)',
+    shadow: 'rgba(49, 21, 4, 0.17)',
   },
   spacing: value => `${4 * value}px`,
   header: {

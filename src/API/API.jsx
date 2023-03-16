@@ -17,7 +17,7 @@ export const getAllCoursesAPI = () => {
         'Authorization': `${AuthorizationToken}`,
         language: 'en-US',
         cors: {
-            origin: ['https://github.io', 'http://localhost:3000'],
+            origin: ['https://yurijkovbasyuk.github.io', 'http://localhost:3000'],
             methods: 'GET',
         },
     };
@@ -29,7 +29,7 @@ export const getOneCourseByIdAPI = courseId => {
         'Authorization': `${AuthorizationToken}`,
         language: 'en-US',
         cors: {
-            origin: ['https://github.io', 'http://localhost:3000'],
+            origin: ['https://yurijkovbasyuk.github.io', 'http://localhost:3000'],
             methods: 'GET',
         },
     };
