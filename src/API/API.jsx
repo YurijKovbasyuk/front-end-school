@@ -6,35 +6,40 @@ import axios from 'axios';
 // const TOKEN = [HEADER, BODY, SIGNATURE].join('.')
 // const AuthorizationToken = (`Bearer ${TOKEN}`)
 
-const AuthorizationToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NmU4YjA4OS0zMjEwLTQ4MDUtOTA3Ni05MDdiMDUzNGRjZmMiLCJwbGF0Zm9ybSI6InN1YnNjcmlwdGlvbnMiLCJpYXQiOjE2Nzg5MTA3NjksImV4cCI6MTY3OTgxMDc2OX0.qDFtfrMs_-hZt-sTgVkhksG15TBLApegpm4kXFxSQIQ';
+const AUTH_TOKEN =
+  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NmU4YjA4OS0zMjEwLTQ4MDUtOTA3Ni05MDdiMDUzNGRjZmMiLCJwbGF0Zm9ybSI6InN1YnNjcmlwdGlvbnMiLCJpYXQiOjE2Nzg5MTA3NjksImV4cCI6MTY3OTgxMDc2OX0.qDFtfrMs_-hZt-sTgVkhksG15TBLApegpm4kXFxSQIQ';
 
 const baseURL = 'https://api.wisey.app/';
 axios.defaults.baseURL = baseURL;
-
+// axios.defaults.headers['Authorization'] = AUTH_TOKEN;
+// axios.defaults.headers.get['Content-Type'] =
+//   'application/x-www-form-urlencoded';
 
 export const getAllCoursesAPI = () => {
-    axios.defaults.headers = {
-        'Authorization': `${AuthorizationToken}`,
-        language: 'en-US',
-        cors: {
-            origin: ['https://yurijkovbasyuk.github.io', 'http://localhost:3000'],
-            methods: 'GET',
-        },
-    };
-    return axios.get(`api/v1/core/preview-courses`).then(res => res.data.courses);
+  axios.defaults.headers = {
+    Authorization: `${AUTH_TOKEN}`,
+    language: 'en-US',
+    cors: {
+      origin: '*',
+      methods: 'GET',
+    },
+  };
+  return axios.get(`api/v1/core/preview-courses`).then(res => res.data.courses);
 };
 
 export const getOneCourseByIdAPI = courseId => {
-    axios.defaults.headers = {
-        'Authorization': `${AuthorizationToken}`,
-        language: 'en-US',
-        cors: {
-            origin: ['https://yurijkovbasyuk.github.io', 'http://localhost:3000'],
-            methods: 'GET',
-        },
-    };
+  axios.defaults.headers = {
+    Authorization: `${AUTH_TOKEN}`,
+    language: 'en-US',
+    cors: {
+      origin: '*',
+      methods: 'GET',
+    },
+  };
 
-    return axios.get(`api/v1/core/preview-courses/${courseId}`).then(res => res.data);
+  return axios
+    .get(`api/v1/core/preview-courses/${courseId}`)
+    .then(res => res.data);
 };
 
 // export const getPreviewImage = () => {
