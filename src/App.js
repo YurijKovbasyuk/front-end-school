@@ -2,7 +2,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import CoursesPage from './pages/CoursesPage/CoursesPage';
-import LessonPage from './pages/LessonPage/LessonPage'
+import OneCoursePage from './pages/OneCoursePage/OneCoursePage';
 
 // const Courses = lazy(() => import('./pages/CoursesPage/CoursesPage'));
 // const Lesson = lazy(() => import('./pages/LessonPage/LessonPage'));
@@ -12,11 +12,10 @@ function App() {
     <>
       <Routes>
         <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/courses/:courseId" element={<LessonPage />} />
+        <Route path="/courses/:courseId" element={<OneCoursePage />} />
         <Route path="*" element={<Navigate to="/courses" replace />} />
       </Routes>
     </>
-
   );
 }
 

@@ -6,7 +6,6 @@ import { CoursesListStyle } from './CoursesList.styled';
 export const CoursesList = () => {
   const [coursesList, setCoursesList] = useState([]);
 
-
   useEffect(() => {
     getAllCoursesAPI()
       .then(data => {
@@ -20,24 +19,31 @@ export const CoursesList = () => {
   if (coursesList) {
     return (
       <CoursesListStyle>
-        {coursesList.map(({ id, title, description, previewImageLink, lessonsCount, rating, meta }) => {
-          return (
-            <CoursesItem
-              key={id}
-              id={id}
-              title={title}
-              description={description}
-              previewImageLink={previewImageLink}
-              lessonsCount={lessonsCount}
-              rating={rating}
-              meta={meta}
-            />
-          );
-        }
+        {coursesList.map(
+          ({
+            id,
+            title,
+            description,
+            previewImageLink,
+            lessonsCount,
+            rating,
+            meta,
+          }) => {
+            return (
+              <CoursesItem
+                key={id}
+                id={id}
+                title={title}
+                description={description}
+                previewImageLink={previewImageLink}
+                lessonsCount={lessonsCount}
+                rating={rating}
+                meta={meta}
+              />
+            );
+          }
         )}
       </CoursesListStyle>
-    )
+    );
   }
-
 };
-
