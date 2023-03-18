@@ -18,8 +18,6 @@ export const OneCourse = () => {
   const [error, setErr] = useState('');
   const { courseId } = useParams();
 
-  console.log('courseId', courseId);
-
   useEffect(() => {
     getOneCourseByIdAPI(courseId)
       .then(setOneCourse)
