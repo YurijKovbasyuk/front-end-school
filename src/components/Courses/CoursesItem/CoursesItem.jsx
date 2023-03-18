@@ -49,5 +49,11 @@ export const CoursesItem = ({
 };
 
 CoursesItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  previewImageLink: PropTypes.string.isRequired,
+  lessonsCount: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
   meta: PropTypes.object.isRequired,
 };

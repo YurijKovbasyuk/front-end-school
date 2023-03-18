@@ -3,7 +3,6 @@ import { getAllCoursesAPI } from 'API/API';
 import { CoursesItem, Pagination, Spinner } from 'components';
 import { CoursesListStyle } from './CoursesList.styled';
 
-// import { usePagination } from 'hooks/usePagination';
 
 export const CoursesList = () => {
   const [coursesList, setCoursesList] = useState([]);

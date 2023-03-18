@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import defaultImg from 'data/img/default.webp';
-// import BtnGoBack from '../components/BtnGoBack/BtnGoBack';
 import { getOneCourseByIdAPI } from 'API/API';
 import {
   Wrapper,
@@ -20,8 +19,6 @@ export const OneCourse = () => {
   const { courseId } = useParams();
 
   console.log('courseId', courseId);
-  // const id = parseInt(location.pathname.match(/\d+/));
-  // console.log('id', id);
 
   useEffect(() => {
     getOneCourseByIdAPI(courseId)
@@ -32,8 +29,6 @@ export const OneCourse = () => {
         throw error;
       });
   }, [courseId]);
-
-  console.log(oneCourse);
 
   const { title, lessons, description } = oneCourse;
   return (

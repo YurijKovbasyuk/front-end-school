@@ -1,14 +1,5 @@
-import React from 'react';
-import {
-  Wrapper,
-  Button,
-  CourseWrapper,
-  ImgWrapper,
-  SkillsList,
-  InfoItem,
-  SubjectItem,
-  CourseDescription,
-} from './Pagination.styled';
+import PropTypes from 'prop-types';
+import { Wrapper, Button } from './Pagination.styled';
 
 export const Pagination = ({ contentPerPage, totalContent, paginate }) => {
   const pageNumbers = [];
@@ -26,4 +17,10 @@ export const Pagination = ({ contentPerPage, totalContent, paginate }) => {
       ))}
     </Wrapper>
   );
+};
+
+Pagination.propTypes = {
+  contentPerPage: PropTypes.number.isRequired,
+  totalContent: PropTypes.number.isRequired,
+  paginate: PropTypes.func.isRequired,
 };
