@@ -3,7 +3,6 @@ import { getAllCoursesAPI } from 'API/API';
 import { CoursesItem, Pagination, Spinner } from 'components';
 import { CoursesListStyle } from './CoursesList.styled';
 
-
 export const CoursesList = () => {
   const [coursesList, setCoursesList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -19,6 +18,7 @@ export const CoursesList = () => {
   useEffect(() => {
     setLoading(true);
     getAllCoursesAPI()
+      .then(res => res.data.courses)
       .then(data => {
         setCoursesList(data);
       })
@@ -30,7 +30,7 @@ export const CoursesList = () => {
   if (loading) {
     return <Spinner></Spinner>;
   }
-
+  console.log('coursesList', coursesList);
   if (coursesList) {
     return (
       <>

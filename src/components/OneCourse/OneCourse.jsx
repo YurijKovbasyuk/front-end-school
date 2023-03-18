@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import defaultImg from 'data/img/default.webp';
 import { getOneCourseByIdAPI } from 'API/API';
+import { VideoPlayer } from 'components';
 import {
   Wrapper,
   Title,
@@ -37,10 +38,15 @@ export const OneCourse = () => {
         <>
           <Wrapper>
             <Title>{title}</Title>
-            <video
-              src="https://wisey.app/videos/lack-of-motivation-how-to-overcome-it/lesson-1/AppleHLS1/lesson-1.m3u8"
+            <VideoPlayer
+              autoPlay
               controls
-            ></video>
+              width={640}
+              height={360}
+              src={
+                'https://wisey.app/videos/lack-of-motivation-how-to-overcome-it/lesson-1/AppleHLS1/lesson-1.m3u8'
+              }
+            ></VideoPlayer>
             <Description>{description}</Description>
             <LessonList>
               {lessons?.map(lesson => {
