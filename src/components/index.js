@@ -7,3 +7,5 @@ export * from './Courses/CoursesList/CoursesList';
 export * from './Courses/CoursesItem/CoursesItem';
 
 export * from './OneCourse/OneCourse';
+
+export * from './Pagination/Pagination';

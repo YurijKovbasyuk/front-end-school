@@ -31,14 +31,10 @@ export const CoursesItem = ({
         </NavLink>
       </CourseTitle>
       <CourseWrapper>
-        <ImgWrapper>
-          <img
-            src={
-              previewImageLink ? previewImageLink + '/cover.webp' : defaultImg
-            }
-            alt={description}
-          ></img>
-        </ImgWrapper>
+        <ImgWrapper
+          src={previewImageLink ? previewImageLink + '/cover.webp' : defaultImg}
+          alt={description}
+        ></ImgWrapper>
         <CourseDescription>{description}</CourseDescription>
 
         <SubjectItem>Lessons count: {lessonsCount}</SubjectItem>

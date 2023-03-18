@@ -62,15 +62,15 @@ export const CourseWrapper = styled.div`
   display: box;
 `;
 
-export const ImgWrapper = styled.div`
-  flex: 0 0 110px;
+export const ImgWrapper = styled.img`
+  height: 115px;
 
   ${device.tablet} {
-    flex: 0 0 120px;
+    height: 136px;
   }
 
   ${device.desktop} {
-    flex: 0 0 158px;
+    height: 125px;
   }
 `;
 export const CourseDescription = styled.h3`
