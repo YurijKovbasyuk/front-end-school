@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import defaultImg from 'data/img/default.webp';
 import { getOneCourseByIdAPI } from 'API/API';
-import { Player, Spinner } from 'components';
+import { Player, Spinner, ShowVideoPlayer } from 'components';
 import {
   Wrapper,
   Title,
@@ -10,7 +9,6 @@ import {
   ImgWrapper,
   LessonList,
   InfoItem,
-  Item,
   Description,
 } from './OneCourse.styled';
 
@@ -65,7 +63,12 @@ export const OneCourse = () => {
           <>
             <Wrapper>
               <Title>{title}</Title>
-              <Player autoPlay url={urlFirstVideo} width="95%"></Player>
+              {urlFirstVideo !== undefined ? (
+                <Player autoPlay url={urlFirstVideo}></Player>
+              ) : (
+                <p>No video added</p>
+              )}
+
               <Description>{description}</Description>
               <LessonList>
                 {lessons?.map(lesson => {
@@ -75,27 +78,21 @@ export const OneCourse = () => {
                     <InfoItem key={id}>
                       <LessonTitle>
                         Lesson {order}: {title}
+                        {status === 'locked' ? (
+                          <span style={{ color: 'red' }}> Lesson loked</span>
+                        ) : null}
                       </LessonTitle>
                       <ImgWrapper>
-                        {showPlayer === order && status === 'unlocked' ? (
-                          <Player url={link} />
-                        ) : (
-                          <img
-                            key={order}
-                            src={
-                              previewImageLink
-                                ? previewImageLink +
-                                  '/lesson-' +
-                                  order +
-                                  '.webp'
-                                : defaultImg
-                            }
-                            alt={description}
-                            onClick={() => handleClick(order)}
-                          ></img>
-                        )}
+                        <ShowVideoPlayer
+                          order={order}
+                          status={status}
+                          link={link}
+                          previewImageLink={previewImageLink}
+                          description={description}
+                          showPlayer={showPlayer}
+                          handleClick={handleClick}
+                        />
                       </ImgWrapper>
-                      <Item>Status: {status}</Item>
                     </InfoItem>
                   );
                 })}

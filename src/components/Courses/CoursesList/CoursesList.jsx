@@ -15,7 +15,19 @@ export const CoursesList = () => {
   const firstContentIndex = lastContentIndex - contentPerPage;
   const currentContent = coursesList.slice(firstContentIndex, lastContentIndex);
 
-  const paginate = pageNamber => setCurrentPage(pageNamber);
+  // Зберігаємо номер поточної сторінки в localStorage
+  const paginate = pageNamber => {
+    setCurrentPage(pageNamber);
+    localStorage.setItem('currentPage', pageNamber);
+  };
+
+  // Зчитуємо номер поточної сторінки з localStorage
+  useEffect(() => {
+    const savedPage = localStorage.getItem('currentPage');
+    if (savedPage) {
+      setCurrentPage(parseInt(savedPage));
+    }
+  }, []);
 
   useEffect(() => {
     // Вказуємо стан для відображення спінера
