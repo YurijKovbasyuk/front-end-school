@@ -41,7 +41,9 @@ export const CoursesItem = ({
         <SubjectItem>Rating: {rating}</SubjectItem>
         <SkillsList>
           <p>Skills: </p>
-          <InfoItem>{meta.skills}</InfoItem>
+          {meta.skills?.map(skill => {
+            return <InfoItem key={skill}>{skill}</InfoItem>;
+          })}
         </SkillsList>
       </CourseWrapper>
     </Card>

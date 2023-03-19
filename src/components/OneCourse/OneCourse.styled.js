@@ -132,7 +132,6 @@ export const Item = styled.p`
 export const LessonList = styled.ul``;
 
 export const InfoItem = styled.li`
-  margin-left: 12px;
   position: relative;
   font-size: 12px;
   line-height: 1.33;
@@ -143,7 +142,6 @@ export const InfoItem = styled.li`
   }
 
   ${device.tablet} {
-    margin-left: 14px;
     font-size: 14px;
     line-height: 1.35;
 
@@ -153,7 +151,6 @@ export const InfoItem = styled.li`
   }
 
   ${device.desktop} {
-    margin-left: 16px;
     font-size: 16px;
     line-height: 1.375;
 

@@ -10,7 +10,6 @@ export const theme = Object.freeze({
     bgSecond: '#fffcff',
 
     dark: '#181C27',
-    btnTransperent: 'rgba(255, 255, 255, 0.6)',
     shadow: 'rgba(49, 21, 4, 0.17)',
   },
   spacing: value => `${4 * value}px`,

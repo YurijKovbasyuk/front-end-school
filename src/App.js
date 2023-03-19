@@ -1,11 +1,7 @@
-// import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-
 import CoursesPage from './pages/CoursesPage/CoursesPage';
 import OneCoursePage from './pages/OneCoursePage/OneCoursePage';
 
-// const Courses = lazy(() => import('./pages/CoursesPage/CoursesPage'));
-// const Lesson = lazy(() => import('./pages/LessonPage/LessonPage'));
 
 function App() {
   return (
